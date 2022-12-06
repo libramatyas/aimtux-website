@@ -5,8 +5,92 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AimTux - Reborn</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		let x = 0;
+let startScroll;
+
+$('.scrollable').scroll(function () {
+  x = $(this).scrollTop();
+})
+
+$('#scroll-slider').on('input', function () {
+  clearInterval(startScroll);
+ 
+  
+  if ($('#pause').hasClass('active')) {
+    startScroll = setInterval(scroller, 400 / ($('#scroll-slider').val())); 
+  }
+});
+
+$('.scroll-btn').on('click', function () {
+  $('#play').toggleClass('active');
+  $('#pause').toggleClass('active');
+  
+  if ($('#pause').hasClass('active')) {
+    startScroll = setInterval(scroller, 800 /($('#scroll-slider').val()) ); 
+  } else {
+    clearInterval(startScroll);
+  }
+});
+
+function scroller () {
+  x += 1
+  $('.scrollable').scrollTop(x); 
+}
+
+
+	</script>
 </head>
-<body>
-	<h1>hi</h1>
+<body style="background-color: #191c1d;">
+	<div class="one">
+		<h1>AimTux - Reborn</h1>
+	</div>
+	<div class="two">
+		<h3 style="margin-top: 5%;">Start Scrolling</h3>
+		<h2>Let's dive a little deeper into this</h2>
+		<h2>Remember the old Aimtux days? No? Don't worry, me neither</h2>
+
+	</div>
+	<div class="three">
+		<h2>But we can fix that!</h2>
+		<h2>Lets dive deeper into the world of linux cheating</h2>
+	</div>
+	<div class="four">
+		<h2>AimTux was created on february the 16th, 2017</h2>
+	</div>
+	<div class="five">
+		<h2>Since then, many people have worked on the branch and made their own forks after the original project was archived</h2>
+	</div>
+	<div class="six">
+		<a href="https://github.com/ArnoldasMK/Kali">Kali</a>
+		<h2 style="padding-bottom: 1%;">And</h2>
+		<a href="https://github.com/LWSS/Fuzion" style="padding-bottom: 1%;">Fuzion</a>
+		<h2 style="padding-bottom: 4%;">More significant ones were:</h2>
+	</div>
+	<div class="seven">
+		<h3>
+			was forced into linux in 3rd grade (never ended up changing to windows cos i realised its just gross) <br>
+			had no clue how c++ or game hacking on Linux works <br>
+			but feels cool cos he has Linux <br>
+			Perfect person to make a 2nd era of AimTux a thing! <br>
+			Yea and thats how this happened <br>
+		</h3>
+		<h2>And then theres me:</h2>
+	</div>
+	<div class="eight">
+		<h2>it ends up being a pretty cool thing</h2>
+	</div>
+	<div class="nine">
+		<h2>and leaves me wondering</h2>
+	</div>
+	<div class="ten">
+		<h2>how on earth did i do that</h2>
+	</div>
+
+	<div class="downloads">
+		<h1>Get good, get AimTux Reborn</h1>
+		<h3><a href="downloads.html">Download</a></h3>	
+	</div>
 </body>
 </html>
